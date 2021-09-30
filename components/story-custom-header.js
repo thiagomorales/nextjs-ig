@@ -70,7 +70,7 @@ export const CustomHeader = ({ story, config, data, action }) => {
             setModal(false);
             action("pause");
           }}
-          style={{ zIndex: 999999999 }}
+          style={{ zIndex: 999999999, cursor: "pointer" }}
         >
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
