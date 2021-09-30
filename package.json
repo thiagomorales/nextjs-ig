@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest --config jest.config.js --watchAll=false --maxWorkers=2",
+    "test": "jest --config jest.config.js --watchAll=false --maxWorkers=2 --passWithNoTests",
     "lint": "eslint --fix --config .eslintrc.json src --ext .js,.ts,.tsx"
   },
   "dependencies": {
