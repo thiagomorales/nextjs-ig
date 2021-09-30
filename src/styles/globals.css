@@ -3,31 +3,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @font-face {
-  font-family: "soleil";
-  src: url("https://use.typekit.net/af/2e4bb3/00000000000000003b9aef7e/27/l?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n4&v=3")
-      format("woff2"),
-    url("https://use.typekit.net/af/2e4bb3/00000000000000003b9aef7e/27/d?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n4&v=3")
-      format("woff"),
-    url("https://use.typekit.net/af/2e4bb3/00000000000000003b9aef7e/27/a?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n4&v=3")
-      format("opentype");
+  font-family: 'soleil';
+  src: url('https://use.typekit.net/af/2e4bb3/00000000000000003b9aef7e/27/l?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n4&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/2e4bb3/00000000000000003b9aef7e/27/d?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n4&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/2e4bb3/00000000000000003b9aef7e/27/a?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n4&v=3')
+      format('opentype');
   font-display: swap;
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "soleil";
-  src: url("https://use.typekit.net/af/273d01/00000000000000003b9aef81/27/l?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n6&v=3")
-      format("woff2"),
-    url("https://use.typekit.net/af/273d01/00000000000000003b9aef81/27/d?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n6&v=3")
-      format("woff"),
-    url("https://use.typekit.net/af/273d01/00000000000000003b9aef81/27/a?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n6&v=3")
-      format("opentype");
+  font-family: 'soleil';
+  src: url('https://use.typekit.net/af/273d01/00000000000000003b9aef81/27/l?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n6&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/273d01/00000000000000003b9aef81/27/d?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n6&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/273d01/00000000000000003b9aef81/27/a?primer=0c3631e75e900eb7ab7d66a2fee20946f78a393e6c6ee4fad09de3617cc4709d&fvd=n6&v=3')
+      format('opentype');
   font-display: swap;
   font-style: normal;
   font-weight: 600;
@@ -37,9 +37,8 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f5f5fb;
-  font-family: "soleil", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  font-family: 'soleil', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 16px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -156,7 +155,7 @@ body {
 }
 .stories-feed {
   scrollbar-width: none;
-  overflow: hidden;
+  overflow-y: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
