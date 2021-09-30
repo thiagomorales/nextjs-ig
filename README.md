@@ -24,7 +24,7 @@
 </ul>
 
 <p>
-  This is a mobile responsive instagram clone example but only homepage. I set up links for other pages but I did not design them. The data is static, but fetching from Next's <a href="https://nextjs.org/docs/api-routes/introduction">API Routes</a>. You can assume that it is a fake api. I was fetching data as JSON without use a real api but I wanted to make website ready to use with a backend. You can edit the content data from /static/example_data.js and api will fetch it.
+  This is a mobile responsive instagram clone example but only homepage. I set up links for other pages but I did not design them. The data is static, but fetching from Next's <a href="https://nextjs.org/docs/api-routes/introduction">API Routes</a>. You can assume that it is a fake api. I was fetching data as JSON without use a real api but I wanted to make website ready to use with a backend. You can edit the content data from /public/example_data.js and api will fetch it.
   <br><br>
   I used <a href="https://vercel.com/">vercel.com</a> to deploy project.
   <br><br>
