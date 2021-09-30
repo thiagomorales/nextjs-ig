@@ -1,4 +1,6 @@
-import * as React from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable import/no-anonymous-default-export */
+import React, { useEffect, useState } from 'react';
 
 import ReactPlayer from 'react-player';
 import ClipLoader from 'react-spinners/ClipLoader';
@@ -6,12 +8,44 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import ModalStateHook from '../hooks/story_modal_hook';
 import { CustomHeader } from './story-custom-header';
 
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    width: '100%',
+  },
+  storyContent: {
+    width: 'auto',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    margin: 'auto',
+  },
+  videoContainer: {
+    display: 'flex',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loading: {
+    left: 0,
+    top: 0,
+    transform: 'translateY(300%)',
+    background: 'rgba(0, 0, 0, 0.9)',
+    zIndex: 9,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#ccc',
+  },
+};
+
 export const renderer = ({ action, config, isPaused, messageHandler, story }) => {
   const { modalData } = ModalStateHook();
 
-  const [playing, setPlaying] = React.useState(false);
-  const [loaded, setLoaded] = React.useState(false);
-  const [muted, setMuted] = React.useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [muted] = useState(false);
 
   const { height, loader, storyStyles, width } = config;
   const data = modalData;
@@ -23,16 +57,16 @@ export const renderer = ({ action, config, isPaused, messageHandler, story }) =>
 
   const vid = React.useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (vid.current) {
-      if (vid.current.getCurrentTime() === 0) {
-      } else if (isPaused) {
+      if (isPaused) {
         action('pause', true);
         setPlaying(false);
       } else {
         setPlaying(true);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPaused]);
 
   const onWaiting = () => {
@@ -69,7 +103,6 @@ export const renderer = ({ action, config, isPaused, messageHandler, story }) =>
           onBuffer={onWaiting}
           onBufferEnd={onPlaying}
           muted={muted}
-          className="react-player-video"
           width="100%"
           height="100%"
           playing={playing}
@@ -89,38 +122,6 @@ export const renderer = ({ action, config, isPaused, messageHandler, story }) =>
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-    width: '100%',
-  },
-  storyContent: {
-    width: 'auto',
-    maxWidth: '100%',
-    maxHeight: '100%',
-    margin: 'auto',
-  },
-  videoContainer: {
-    display: 'flex',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  loading: {
-    left: 0,
-    top: 0,
-    transform: 'translateY(300%)',
-    background: 'rgba(0, 0, 0, 0.9)',
-    zIndex: 9,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: '#ccc',
-  },
 };
 
 export const tester = (story) => {

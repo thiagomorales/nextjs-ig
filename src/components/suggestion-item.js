@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Clickable from './clickable';
 import ProfilePic from './profile_pic';
 import UsernameText from './username-text';
 
