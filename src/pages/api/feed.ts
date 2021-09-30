@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { data } from '../../../public/example_data.js';
+import { data } from '../../../public/example_data';
 
 const feed = data?.feed;
 
