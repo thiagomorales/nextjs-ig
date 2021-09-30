@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from './header';
+import Header from './header.js';
 
-export default function Layout({ children, user }) {
+export default function Layout({ children, user }: { children: any; user: unknown }) {
   return (
     <div className="container">
       <Header user={user} />

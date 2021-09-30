@@ -9,7 +9,7 @@ export default function PostPage() {
   const { pid } = router.query;
 
   return (
-    <Layout>
+    <Layout user={pid}>
       <div>{pid}</div>
     </Layout>
   );

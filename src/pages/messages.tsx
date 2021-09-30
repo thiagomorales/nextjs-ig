@@ -2,10 +2,10 @@ import React from 'react';
 
 import Layout from '../components/layout';
 
-export default function Activity() {
+export default function Messages() {
   return (
-    <Layout>
-      <div>Activity</div>
+    <Layout user={null}>
+      <div>Messages</div>
     </Layout>
   );
 }

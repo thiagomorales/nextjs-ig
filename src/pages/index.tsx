@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react';
 
-import FeedItem from '../components/feed-item';
+import FeedItem from '../components/feed-item.js';
 import Layout from '../components/layout';
-import MoreModalItems from '../components/more-modal';
-import SearchBar from '../components/search_bar';
-import Stories from '../components/stories';
-import StoryItemsModal from '../components/story-modal';
-import LoginUserHook from '../hooks/global_hook';
+import MoreModalItems from '../components/more-modal.js';
+import SearchBar from '../components/search_bar.js';
+import Stories from '../components/stories.js';
+import StoryItemsModal from '../components/story-modal.js';
+import LoginUserHook from '../hooks/global_hook.js';
 
 export default function Home() {
-  const { data, setLoginUser } = LoginUserHook();
+  const { setLoginUser } = LoginUserHook();
 
   const [loginData, setLoginData] = useState(null);
   const [stories, setStories] = useState(null);
   // const [suggestions, setSuggestions] = useState(null);
-  const [feed, setFeed] = useState(null);
+  const [feed, setFeed] = useState<any[] | null>(null);
 
-  const updateLoginUser = (data) => {
+  const updateLoginUser = (data: any) => {
     setLoginUser(data);
     setLoginData(data);
   };
