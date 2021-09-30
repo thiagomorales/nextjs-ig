@@ -39,12 +39,12 @@ export default function MoreModalItems() {
 
   return (
     <div
-      className={`animated fadeDown modal-container flex items-center justify-center ${
+      className={`unselectable animated fadeDown modal-container flex items-center justify-center ${
         !showModal && "hidden"
       }`}
       {...handlers}
     >
-      <div className="animated fadeDown story-modal-box relative mx-6">
+      <div className="unselectable animated fadeDown story-modal-box relative mx-6">
         {showModal && (
           <Stories
             width="100vw"

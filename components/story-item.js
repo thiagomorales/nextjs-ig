@@ -12,7 +12,7 @@ export default function StoryItem({ data }) {
 
   return (
     <div
-      className="story-item w-20 flex-shrink-0 flex flex-col justify-center items-center cursor-pointer"
+      className="unselectable story-item w-20 flex-shrink-0 flex flex-col justify-center items-center cursor-pointer"
       onClick={openStoryModal}
     >
       <div className={"story-photo-container"}>
