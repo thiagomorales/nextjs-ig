@@ -40,6 +40,13 @@ body {
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   font-size: 16px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .text-14-bold {
@@ -124,7 +131,7 @@ body {
   background-color: #fafafa;
   border: solid 1px #dbdbdb;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 16px;
   color: #312f4f;
 }
 
