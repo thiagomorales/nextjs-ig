@@ -22,16 +22,18 @@ export const renderer = ({ story, action, isPaused, config }) => {
   const data = modalData;
 
   return (
-    <div style={styles.container}>
+    <div className="unselectable" style={styles.container}>
       <CustomHeader story={story} config={config} data={data} action={action} />
-      <div style={styles.imageContainer}>
+      <div className="unselectable" style={styles.imageContainer}>
         <img
+          className="unselectable"
           style={{ ...computedStyles, ...styles.image }}
           src={story.url}
           onLoad={imageLoaded}
         />
         {!loaded && (
           <div
+            className="unselectable"
             style={{
               width: width,
               height: height,

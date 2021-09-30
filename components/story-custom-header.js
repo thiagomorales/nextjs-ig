@@ -44,7 +44,7 @@ export const CustomHeader = ({ story, config, data, action }) => {
 
   return (
     <WithHeader story={story} globalHeader={config.header}>
-      <div style={styles.main}>
+      <div className="unselectable" style={styles.main}>
         <div style={{ display: "flex", flexDirection: "row" }}>
           <img style={styles.img} src={data?.image} />
           <span style={styles.text}>

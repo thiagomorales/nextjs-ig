@@ -62,10 +62,11 @@ export const renderer = ({
   };
 
   return (
-    <div style={styles.container}>
+    <div className="unselectable" style={styles.container}>
       <CustomHeader story={story} config={config} data={data} action={action} />
-      <div style={styles.videoContainer}>
+      <div className="unselectable" style={styles.videoContainer}>
         <ReactPlayer
+          className="unselectable"
           ref={vid}
           style={computedStyles}
           url={story.url}
@@ -82,6 +83,7 @@ export const renderer = ({
         />
         {!loaded && (
           <div
+            className="unselectable"
             style={{
               width: width,
               height: height,
