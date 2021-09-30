@@ -20,7 +20,7 @@ export default function ArrowButton(props) {
           opacity="0.60"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class={`feather feather-chevron-${
+          className={`feather feather-chevron-${
             props.direction === "left" ? "left" : "right"
           }`}
         >

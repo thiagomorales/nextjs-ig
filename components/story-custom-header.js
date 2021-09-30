@@ -65,7 +65,7 @@ export const CustomHeader = ({ story, config, data, action }) => {
           stroke-width="1"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-x"
+          className="feather feather-x"
           onClick={() => {
             setModal(false);
             action("pause");

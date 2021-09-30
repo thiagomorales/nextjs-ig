@@ -17,10 +17,12 @@
     "react-spinners": "^0.11.0",
     "react-swipeable": "^6.2.0",
     "recoil": "0.4.1",
-    "tailwindcss": "^1.5.2"
+    "tailwindcss": "^2.2.16"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
+    "autoprefixer": "^10.3.6",
+    "postcss": "^8.3.8",
     "postcss-preset-env": "^6.7.0",
     "prettier": "2.0.5"
   }
