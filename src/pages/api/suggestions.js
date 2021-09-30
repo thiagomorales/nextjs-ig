@@ -1,4 +1,4 @@
-import { data } from "../../public/example_data";
+import { data } from "../../../public/example_data";
 const suggestions = data?.suggestions;
 
 export default function Suggestions(req, res) {

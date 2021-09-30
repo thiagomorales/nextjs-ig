@@ -1,4 +1,4 @@
-import { data } from "../../public/example_data";
+import { data } from "../../../public/example_data";
 const stories = data?.stories;
 
 export default function Stories(req, res) {

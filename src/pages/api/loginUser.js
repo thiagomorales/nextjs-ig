@@ -1,4 +1,4 @@
-import { data } from "../../public/example_data";
+import { data } from "../../../public/example_data";
 const loginUser = data?.loginUser;
 
 export default function LoginUser(req, res) {

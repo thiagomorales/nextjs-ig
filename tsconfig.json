@@ -1,0 +1,43 @@
+{
+  "compilerConfig": {
+    "lib": ["dom", "es2015", "esnext"]
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext", "es2017"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5",
+    "paths": {
+      "~": ["./src/*"],
+      "@containers/*": ["./src/containers/*"],
+      "@components/*": ["./src/components/*"],
+      "@config/*": ["./src/config/*"],
+      "@locales/*": ["./src/locales/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@services/*": ["./src/services/*"],
+      "@store/*": ["./src/store/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@mocks/*": ["./tests/mocks/*"]
+    },
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "isolatedModules": true
+  },
+  "include": ["next-env.d.ts", "src"],
+  "exclude": ["node_modules"]
+}
