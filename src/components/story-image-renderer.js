@@ -1,22 +1,23 @@
-import React, { useState } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import React, { useState } from 'react';
 
-import { CustomHeader } from "./story-custom-header";
-import ModalStateHook from "../hooks/story_modal_hook";
+import ClipLoader from 'react-spinners/ClipLoader';
 
-export const renderer = ({ story, action, isPaused, config }) => {
+import ModalStateHook from '../hooks/story_modal_hook';
+import { CustomHeader } from './story-custom-header';
+
+export const renderer = ({ action, config, isPaused, story }) => {
   const [loaded, setLoaded] = useState(false);
   const { modalData } = ModalStateHook();
 
-  const { width, height, loader, storyStyles } = config;
-  let computedStyles = {
+  const { height, loader, storyStyles, width } = config;
+  const computedStyles = {
     ...styles.storyContent,
     ...(storyStyles || {}),
   };
 
   const imageLoaded = () => {
     setLoaded(true);
-    action("play");
+    action('play');
   };
 
   const data = modalData;
@@ -35,8 +36,8 @@ export const renderer = ({ story, action, isPaused, config }) => {
           <div
             className="unselectable"
             style={{
-              width: width,
-              height: height,
+              width,
+              height,
               ...styles.loading,
             }}
           >
@@ -50,49 +51,49 @@ export const renderer = ({ story, action, isPaused, config }) => {
 
 const styles = {
   container: {
-    display: "flex",
-    flexDirection: "column",
-    height: "100%",
-    width: "100%",
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    width: '100%',
   },
   imageContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
-    marginTop: "16px",
-    marginBottom: "16px",
-    objectFit: "contain",
+    marginTop: '16px',
+    marginBottom: '16px',
+    objectFit: 'contain',
   },
   story: {
-    display: "flex",
-    position: "relative",
-    overflow: "hidden",
+    display: 'flex',
+    position: 'relative',
+    overflow: 'hidden',
   },
   storyContent: {
-    width: "auto",
-    maxWidth: "100%",
-    maxHeight: "100%",
-    margin: "auto",
+    width: 'auto',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    margin: 'auto',
   },
   loading: {
     left: 0,
     top: 0,
-    transform: "translateY(300%)",
-    background: "rgba(0, 0, 0, 0.9)",
+    transform: 'translateY(300%)',
+    background: 'rgba(0, 0, 0, 0.9)',
     zIndex: 9,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "#ccc",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#ccc',
   },
 };
 
 export const tester = (story) => {
   return {
-    condition: !story.content && (!story.type || story.type === "image"),
+    condition: !story.content && (!story.type || story.type === 'image'),
     priority: 2,
   };
 };

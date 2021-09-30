@@ -1,13 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from 'react';
 
-import Layout from "../components/layout";
-import Stories from "../components/stories";
-import FeedItem from "../components/feed-item";
-import MoreModalItems from "../components/more-modal";
-import StoryItemsModal from "../components/story-modal";
-import SearchBar from "../components/search_bar";
-
-import LoginUserHook from "../hooks/global_hook";
+import FeedItem from '../components/feed-item';
+import Layout from '../components/layout';
+import MoreModalItems from '../components/more-modal';
+import SearchBar from '../components/search_bar';
+import Stories from '../components/stories';
+import StoryItemsModal from '../components/story-modal';
+import LoginUserHook from '../hooks/global_hook';
 
 export default function Home() {
   const { data, setLoginUser } = LoginUserHook();
@@ -23,11 +22,11 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetch("/api/loginUser")
+    fetch('/api/loginUser')
       .then((response) => response.json())
       .then((data) => updateLoginUser(data));
 
-    fetch("/api/feed")
+    fetch('/api/feed')
       .then((response) => response.json())
       .then((data) => setFeed(data));
 
@@ -35,7 +34,7 @@ export default function Home() {
     //   .then((response) => response.json())
     //   .then((data) => setSuggestions(data));
 
-    fetch("/api/stories")
+    fetch('/api/stories')
       .then((response) => response.json())
       .then((data) => setStories(data));
   }, []);

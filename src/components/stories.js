@@ -1,6 +1,7 @@
-import React from "react";
-import StoryItem from "./story-item";
-import Box from "./box";
+import React from 'react';
+
+import Box from './box';
+import StoryItem from './story-item';
 
 export default function Stories({ stories }) {
   return (

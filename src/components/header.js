@@ -1,19 +1,19 @@
-import React, { useLayoutEffect } from "react";
-import { useRouter } from "next/router";
+import React, { useLayoutEffect } from 'react';
 
-import SearchBar from "./search_bar";
-import HomeIcon from "./icons/home_icon";
-import DmIcon from "./icons/dm_icon";
-import ExploreIcon from "./icons/explore_icon";
-import ActivityIcon from "./icons/activity_icon";
-import HomeIconActive from "./icons/home_icon_active";
-import DmIconActive from "./icons/dm_icon_active";
-import ExploreIconActive from "./icons/explore_icon_active";
-import ActivityIconActive from "./icons/activity_icon_active";
-import ProfilePic from "./profile_pic";
-import Clickable from "./clickable";
+import { useRouter } from 'next/router';
 
-import LoginUserHook from "../hooks/global_hook";
+import LoginUserHook from '../hooks/global_hook';
+import Clickable from './clickable';
+import ActivityIcon from './icons/activity_icon';
+import ActivityIconActive from './icons/activity_icon_active';
+import DmIcon from './icons/dm_icon';
+import DmIconActive from './icons/dm_icon_active';
+import ExploreIcon from './icons/explore_icon';
+import ExploreIconActive from './icons/explore_icon_active';
+import HomeIcon from './icons/home_icon';
+import HomeIconActive from './icons/home_icon_active';
+import ProfilePic from './profile_pic';
+import SearchBar from './search_bar';
 
 export default function Header({ user }) {
   const router = useRouter();
@@ -56,7 +56,7 @@ export default function Header({ user }) {
               olist
             </span>
             <span className="header-logo" style={{ fontWeight: 400 }}>
-              {" shopping"}
+              {' shopping'}
             </span>
           </Clickable>
         </div>

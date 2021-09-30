@@ -1,14 +1,8 @@
-import React from "react";
-import Router from "next/router";
+import React from 'react';
 
-export default function ProfilePic({
-  src,
-  username,
-  size,
-  border,
-  href,
-  ...props
-}) {
+import Router from 'next/router';
+
+export default function ProfilePic({ border, href, size, src, username, ...props }) {
   return (
     <span {...props}>
       <img
@@ -20,10 +14,10 @@ export default function ProfilePic({
           width: size,
           height: size,
           borderRadius: size,
-          border: border && "2px solid white",
-          cursor: "pointer",
+          border: border && '2px solid white',
+          cursor: 'pointer',
         }}
-      ></img>
+      />
     </span>
   );
 }

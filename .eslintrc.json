@@ -28,7 +28,7 @@
   "plugins": ["react", "import-helpers", "jest", "sort-destructure-keys"],
   "rules": {
     "react/display-name": "off",
-    "react/jsx-uses-react": "off",
+    "react/jsx-uses-react": "warn",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       "error",

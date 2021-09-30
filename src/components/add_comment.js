@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function AddComment() {
   const changeRef = useRef(null);
@@ -17,7 +17,7 @@ export default function AddComment() {
           setAreaSize(changeRef.current.scrollHeight);
           setTyped(e.target.value.length > 0);
         }}
-      ></textarea>
+      />
       <button
         className="add-comment-button text-14-light text-blue"
         style={{ opacity: isTyped ? 1 : 0.3 }}

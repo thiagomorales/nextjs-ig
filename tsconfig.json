@@ -22,7 +22,7 @@
     "strict": true,
     "target": "es5",
     "paths": {
-      "~": ["./src/*"],
+      "*": ["./src/*"],
       "@containers/*": ["./src/containers/*"],
       "@components/*": ["./src/components/*"],
       "@config/*": ["./src/config/*"],

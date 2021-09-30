@@ -1,11 +1,11 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 const loginUser = atom({
-  key: "login_user",
+  key: 'login_user',
   default: {
-    username: "",
-    name: "",
-    image: "",
+    username: '',
+    name: '',
+    image: '',
   },
 });
 

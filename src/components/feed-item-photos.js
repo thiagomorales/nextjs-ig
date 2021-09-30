@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
+import React, { useState } from 'react';
 
-import ArrowButton from "./arrow_button";
-import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from 'keen-slider/react';
+
+import ArrowButton from './arrow_button';
+import 'keen-slider/keen-slider.min.css';
 
 export default function FeedItemPhotos({ photos }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,7 +19,7 @@ export default function FeedItemPhotos({ photos }) {
       <div
         ref={sliderRef}
         className={`feed-photo-container flex relative items-center keen-slider outline-none ${
-          photos?.length > 1 ? "mb-0" : "mb-2"
+          photos?.length > 1 ? 'mb-0' : 'mb-2'
         }`}
       >
         {photos.map((item, index) => {
@@ -26,7 +27,7 @@ export default function FeedItemPhotos({ photos }) {
             <img
               key={index}
               className="keen-slider__slide flex-1 object-fill hide-photo absolute overflow-hidden"
-              src={item || "https://picsum.photos/512/512"}
+              src={item || 'https://picsum.photos/512/512'}
             />
           );
         })}
@@ -53,9 +54,9 @@ export default function FeedItemPhotos({ photos }) {
             return (
               <button
                 key={idx}
-                className={"slide-dot flex justify-center"}
+                className="slide-dot flex justify-center"
                 onClick={() => slider.moveToSlideRelative(idx)}
-                style={{ backgroundColor: currentSlide === idx && "#364EF7" }}
+                style={{ backgroundColor: currentSlide === idx && '#364EF7' }}
               />
             );
           })}

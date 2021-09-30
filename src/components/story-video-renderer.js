@@ -1,62 +1,55 @@
-import * as React from "react";
-import ReactPlayer from "react-player";
-import ClipLoader from "react-spinners/ClipLoader";
+import * as React from 'react';
 
-import { CustomHeader } from "./story-custom-header";
-import ModalStateHook from "../hooks/story_modal_hook";
+import ReactPlayer from 'react-player';
+import ClipLoader from 'react-spinners/ClipLoader';
 
-export const renderer = ({
-  story,
-  action,
-  isPaused,
-  config,
-  messageHandler,
-}) => {
+import ModalStateHook from '../hooks/story_modal_hook';
+import { CustomHeader } from './story-custom-header';
+
+export const renderer = ({ action, config, isPaused, messageHandler, story }) => {
   const { modalData } = ModalStateHook();
 
   const [playing, setPlaying] = React.useState(false);
   const [loaded, setLoaded] = React.useState(false);
   const [muted, setMuted] = React.useState(false);
 
-  const { width, height, loader, storyStyles } = config;
+  const { height, loader, storyStyles, width } = config;
   const data = modalData;
 
-  let computedStyles = {
+  const computedStyles = {
     ...styles.storyContent,
     ...(storyStyles || {}),
   };
 
-  let vid = React.useRef(null);
+  const vid = React.useRef(null);
 
   React.useEffect(() => {
     if (vid.current) {
       if (vid.current.getCurrentTime() === 0) {
+      } else if (isPaused) {
+        action('pause', true);
+        setPlaying(false);
       } else {
-        if (isPaused) {
-          action("pause", true);
-          setPlaying(false);
-        } else {
-          setPlaying(true);
-        }
+        setPlaying(true);
       }
     }
   }, [isPaused]);
 
   const onWaiting = () => {
-    action("pause", true);
+    action('pause', true);
     setPlaying(false);
   };
 
   const onPlaying = () => {
-    action("play", true);
+    action('play', true);
     setPlaying(true);
   };
 
   const videoLoaded = () => {
-    messageHandler("UPDATE_VIDEO_DURATION", {
+    messageHandler('UPDATE_VIDEO_DURATION', {
       duration: vid.current.getDuration(),
     });
-    action("play");
+    action('play');
     setLoaded(true);
     setPlaying(true);
   };
@@ -85,8 +78,8 @@ export const renderer = ({
           <div
             className="unselectable"
             style={{
-              width: width,
-              height: height,
+              width,
+              height,
               ...styles.loading,
             }}
           >
@@ -100,39 +93,39 @@ export const renderer = ({
 
 const styles = {
   container: {
-    display: "flex",
-    flexDirection: "column",
-    height: "100%",
-    width: "100%",
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    width: '100%',
   },
   storyContent: {
-    width: "auto",
-    maxWidth: "100%",
-    maxHeight: "100%",
-    margin: "auto",
+    width: 'auto',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    margin: 'auto',
   },
   videoContainer: {
-    display: "flex",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   loading: {
     left: 0,
     top: 0,
-    transform: "translateY(300%)",
-    background: "rgba(0, 0, 0, 0.9)",
+    transform: 'translateY(300%)',
+    background: 'rgba(0, 0, 0, 0.9)',
     zIndex: 9,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "#ccc",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#ccc',
   },
 };
 
 export const tester = (story) => {
   return {
-    condition: story.type === "video",
+    condition: story.type === 'video',
     priority: 2,
   };
 };

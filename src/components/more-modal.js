@@ -1,7 +1,9 @@
-import React from "react";
-import Modal from "./modal";
-import ModalStateHook from "../hooks/modal_hook";
-import Router from "next/router";
+import React from 'react';
+
+import Router from 'next/router';
+
+import ModalStateHook from '../hooks/modal_hook';
+import Modal from './modal';
 
 export default function MoreModalItems() {
   const { modalData } = ModalStateHook();
@@ -10,7 +12,7 @@ export default function MoreModalItems() {
     <Modal>
       <button
         className="modal-box-item h-12 bg-white w-full text-14-bold text-red"
-        onClick={() => console.log("test")}
+        onClick={() => console.log('test')}
       >
         Report Inappropriate
       </button>
@@ -19,22 +21,14 @@ export default function MoreModalItems() {
       </button>
       <button
         className="modal-box-item h-12 bg-white w-full text-14-light"
-        onClick={() => Router.push("/post/[pid]", `/post/${data.pid}`)}
+        onClick={() => Router.push('/post/[pid]', `/post/${data.pid}`)}
       >
         Go to Post
       </button>
-      <button className="modal-box-item h-12 bg-white w-full text-14-light">
-        Share
-      </button>
-      <button className="modal-box-item h-12 bg-white w-full text-14-light">
-        Copy Link
-      </button>
-      <button className="modal-box-item h-12 bg-white w-full text-14-light">
-        Embed
-      </button>
-      <button className="modal-box-item h-12 bg-white w-full text-14-light">
-        Cancel
-      </button>
+      <button className="modal-box-item h-12 bg-white w-full text-14-light">Share</button>
+      <button className="modal-box-item h-12 bg-white w-full text-14-light">Copy Link</button>
+      <button className="modal-box-item h-12 bg-white w-full text-14-light">Embed</button>
+      <button className="modal-box-item h-12 bg-white w-full text-14-light">Cancel</button>
     </Modal>
   );
 }
