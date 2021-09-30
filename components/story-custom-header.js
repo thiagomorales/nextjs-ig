@@ -62,9 +62,9 @@ export const CustomHeader = ({ story, config, data, action }) => {
           viewBox="0 0 24 24"
           fill="none"
           stroke="#fff"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="feather feather-x"
           onClick={() => {
             setModal(false);
