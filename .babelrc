@@ -1,0 +1,27 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "~": "./src",
+          "@containers/*": "./src/containers/*",
+          "@components/*": "./src/components/*",
+          "@config/*": "./src/config/*",
+          "@locales/*": "./src/locales/*",
+          "@models/*": "./src/models/*",
+          "@mocks/*": "./src/mocks/*",
+          "@pages/*": "./src/pages/*",
+          "@providers/*": "./src/providers/*",
+          "@services/*": "./src/services/*",
+          "@stores/*": "./src/stores/*",
+          "@styles/*": "./src/styles/*",
+          "@utils/*": "./src/utils/*",
+          "@test-mocks/*": "./tests/mocks/*"
+        }
+      }
+    ]
+  ]
+}

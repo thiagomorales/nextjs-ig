@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import FeedItem from '@components/feed-item.js';
-import Layout from '@components/layout';
+import Layout from '@components/layout.js';
 import MoreModalItems from '@components/more-modal.js';
 import SearchBar from '@components/search_bar.js';
 import Stories from '@components/Story/Stories';
