@@ -61,15 +61,15 @@ const MoreModalItems = observer(() => {
             storyContainerStyles={{
               overflow: 'hidden',
               width: '100vw',
-              height: 'auto',
+              height: '100%',
               zIndex: '9999999',
+              paddingTop: '8px',
+              paddingBottom: '8px',
             }}
             storyStyles={{
-              width: 'auto',
-              maxWidth: '100%',
-              maxHeight: '100%',
-              paddingTop: '24px',
-              paddingBottom: '24px',
+              display: 'flex',
+              width: '100%',
+              height: '100%',
             }}
           />
         )}

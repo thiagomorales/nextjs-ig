@@ -19,29 +19,22 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    width: '100%',
+    height: '100%',
+    overflow: 'none',
+    marginTop: '8px',
   },
   image: {
-    marginTop: '16px',
-    marginBottom: '16px',
+    width: '100%',
+    height: '100%',
     objectFit: 'contain',
-  },
-  story: {
-    display: 'flex',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-  storyContent: {
-    width: 'auto',
-    maxWidth: '100%',
-    maxHeight: '100%',
-    margin: 'auto',
   },
   loading: {
     left: 0,
     top: 0,
     transform: 'translateY(300%)',
-    background: 'rgba(0, 0, 0, 0.9)',
+    backgroundColor: '#111',
     zIndex: 9,
     display: 'flex',
     justifyContent: 'center',
@@ -55,7 +48,6 @@ export const renderer: Renderer = ({ action, config, story }) => {
 
   const { height, loader, storyStyles, width } = config;
   const computedStyles = {
-    ...styles.storyContent,
     ...(storyStyles || {}),
   };
 
