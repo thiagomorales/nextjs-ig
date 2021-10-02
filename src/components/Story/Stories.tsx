@@ -3,7 +3,7 @@ import React from 'react';
 
 import StoryItem from '@components/Story/StoryItem';
 
-import Box from '../box.js';
+import Box from '../box';
 
 const Stories = ({ stories }: any) => {
   return (

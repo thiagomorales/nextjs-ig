@@ -7,7 +7,7 @@ import SearchBar from '@components/search_bar.js';
 import Stories from '@components/Story/Stories';
 import StoryItemsModal from '@components/Story/StoryView';
 
-import LoginUserHook from '../hooks/global_hook.js';
+import LoginUserHook from '../hooks/global_hook';
 
 export default function Home() {
   const { setLoginUser } = LoginUserHook();
