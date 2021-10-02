@@ -1,3 +1,5 @@
+// @ts-ignore
+/* eslint-disable */
 import React from 'react';
 
 import MoreSettings from './icons/more_icon';

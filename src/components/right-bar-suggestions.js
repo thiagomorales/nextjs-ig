@@ -1,3 +1,5 @@
+// @ts-ignore
+/* eslint-disable */
 import React from 'react';
 
 import SuggestionItem from './suggestion-item';

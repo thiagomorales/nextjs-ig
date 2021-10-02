@@ -1,3 +1,5 @@
+// @ts-ignore
+/* eslint-disable */
 import React, { useRef, useState } from 'react';
 
 import ModalStateHook from '../hooks/modal_hook';

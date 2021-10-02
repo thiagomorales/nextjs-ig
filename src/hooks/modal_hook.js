@@ -1,3 +1,5 @@
+// @ts-ignore
+/* eslint-disable */
 import { useRecoilState } from 'recoil';
 
 import { modalState } from '../atoms/modal_state';

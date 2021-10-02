@@ -2,7 +2,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { enableStaticRendering } from 'mobx-react-lite';
 
-import { StoryStoreModel, StoryUserData } from 'models/StoryModel';
+import { StoryStoreModel, StoryUserData } from '@models/StoryModel';
 
 enableStaticRendering(typeof window === 'undefined');
 

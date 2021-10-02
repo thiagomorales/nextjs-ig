@@ -1,22 +1,23 @@
-import React, { useLayoutEffect } from 'react';
+/* eslint-disable no-unused-vars */
+import React from 'react';
 
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
-import LoginUserHook from '../hooks/global_hook';
+// import LoginUserHook from '../hooks/global_hook';
 import Clickable from './clickable';
-import ActivityIcon from './icons/activity_icon';
-import ActivityIconActive from './icons/activity_icon_active';
-import DmIcon from './icons/dm_icon';
-import DmIconActive from './icons/dm_icon_active';
-import ExploreIcon from './icons/explore_icon';
-import ExploreIconActive from './icons/explore_icon_active';
-import HomeIcon from './icons/home_icon';
-import HomeIconActive from './icons/home_icon_active';
-import ProfilePic from './profile_pic';
-import SearchBar from './search_bar';
+// import ActivityIcon from './icons/activity_icon';
+// import ActivityIconActive from './icons/activity_icon_active';
+// import DmIcon from './icons/dm_icon';
+// import DmIconActive from './icons/dm_icon_active';
+// import ExploreIcon from './icons/explore_icon';
+// import ExploreIconActive from './icons/explore_icon_active';
+// import HomeIcon from './icons/home_icon';
+// import HomeIconActive from './icons/home_icon_active';
+// import ProfilePic from './profile_pic';
+// import SearchBar from './search_bar';
 
 export default function Header({ user }) {
-  const router = useRouter();
+  // const router = useRouter();
 
   // set icons
   // const home =

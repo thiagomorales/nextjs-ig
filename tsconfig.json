@@ -23,7 +23,7 @@
     "strict": true,
     "target": "es5",
     "paths": {
-      "*": ["./src/*"],
+      "~": ["./src/*"],
       "@containers/*": ["./src/containers/*"],
       "@components/*": ["./src/components/*"],
       "@config/*": ["./src/config/*"],
@@ -40,8 +40,7 @@
     },
     "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types", "./src/@types"],
-    "isolatedModules": true,
-    "plugins": [{ "transform": "typescript-transform-paths" }]
+    "isolatedModules": true
   },
   "include": ["next-env.d.ts", "src"],
   "exclude": ["node_modules"]

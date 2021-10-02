@@ -1,3 +1,5 @@
+// @ts-ignore
+/* eslint-disable */
 import React, { useState } from 'react';
 
 import { useKeenSlider } from 'keen-slider/react';

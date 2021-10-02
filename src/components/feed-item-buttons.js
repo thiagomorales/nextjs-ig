@@ -1,3 +1,5 @@
+// @ts-ignore
+/* eslint-disable */
 import React from 'react';
 
 import Clickable from './clickable';

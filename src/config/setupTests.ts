@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import dotenv from 'dotenv';
 import { cache } from 'swr';
 
-import { server } from 'mocks/server';
+import { server } from '@mocks/server';
 
 dotenv.config();
 

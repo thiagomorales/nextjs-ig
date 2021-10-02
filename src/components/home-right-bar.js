@@ -1,3 +1,5 @@
+// @ts-ignore
+/* eslint-disable */
 import React from 'react';
 
 import LoginUserHook from '../hooks/global_hook';
