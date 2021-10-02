@@ -13,6 +13,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
+    "experimentalDecorators": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "preserveConstEnums": true,
@@ -27,16 +28,20 @@
       "@components/*": ["./src/components/*"],
       "@config/*": ["./src/config/*"],
       "@locales/*": ["./src/locales/*"],
+      "@models/*": ["./src/models/*"],
+      "@mocks/*": ["./src/mocks/*"],
       "@pages/*": ["./src/pages/*"],
+      "@providers/*": ["./src/providers/*"],
       "@services/*": ["./src/services/*"],
-      "@store/*": ["./src/store/*"],
+      "@stores/*": ["./src/stores/*"],
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"],
-      "@mocks/*": ["./tests/mocks/*"]
+      "@test-mocks/*": ["./tests/mocks/*"]
     },
     "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types", "./src/@types"],
-    "isolatedModules": true
+    "isolatedModules": true,
+    "plugins": [{ "transform": "typescript-transform-paths" }]
   },
   "include": ["next-env.d.ts", "src"],
   "exclude": ["node_modules"]

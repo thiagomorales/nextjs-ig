@@ -1,10 +1,11 @@
 import React from 'react';
 
+import { observer } from 'mobx-react-lite';
 import { useRouter } from 'next/router';
 
 import Layout from '../components/layout';
 
-export default function ProfilePage() {
+const ProfilePage = observer(() => {
   const router = useRouter();
   const { pid } = router.query;
 
@@ -13,4 +14,6 @@ export default function ProfilePage() {
       <div>{pid}</div>
     </Layout>
   );
-}
+});
+
+export default ProfilePage;

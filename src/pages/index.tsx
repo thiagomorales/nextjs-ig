@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import FeedItem from '../components/feed-item.js';
-import Layout from '../components/layout';
-import MoreModalItems from '../components/more-modal.js';
-import SearchBar from '../components/search_bar.js';
-import Stories from '../components/stories.js';
-import StoryItemsModal from '../components/story-modal.js';
+import FeedItem from '@components/feed-item.js';
+import Layout from '@components/layout';
+import MoreModalItems from '@components/more-modal.js';
+import SearchBar from '@components/search_bar.js';
+import Stories from '@components/Story/Stories';
+import StoryItemsModal from '@components/Story/StoryView';
+
 import LoginUserHook from '../hooks/global_hook.js';
 
 export default function Home() {

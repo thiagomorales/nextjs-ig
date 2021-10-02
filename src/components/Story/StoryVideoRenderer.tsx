@@ -2,11 +2,11 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React, { useEffect, useState } from 'react';
 
+import { Renderer, Story } from 'react-insta-stories/dist/interfaces';
 import ReactPlayer from 'react-player';
 import ClipLoader from 'react-spinners/ClipLoader';
 
-import ModalStateHook from '../hooks/story_modal_hook';
-import { CustomHeader } from './story-custom-header';
+import { CustomHeader } from '@components/Story/StoryCustomHeader';
 
 const styles = {
   container: {
@@ -38,24 +38,21 @@ const styles = {
     alignItems: 'center',
     color: '#ccc',
   },
-};
+} as const;
 
-export const renderer = ({ action, config, isPaused, messageHandler, story }) => {
-  const { modalData } = ModalStateHook();
-
+export const renderer: Renderer = ({ action, config, isPaused, messageHandler, story }) => {
   const [playing, setPlaying] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [muted] = useState(false);
 
   const { height, loader, storyStyles, width } = config;
-  const data = modalData;
 
   const computedStyles = {
     ...styles.storyContent,
     ...(storyStyles || {}),
   };
 
-  const vid = React.useRef(null);
+  const vid = React.useRef<ReactPlayer | null>(null);
 
   useEffect(() => {
     if (vid.current) {
@@ -80,9 +77,11 @@ export const renderer = ({ action, config, isPaused, messageHandler, story }) =>
   };
 
   const videoLoaded = () => {
-    messageHandler('UPDATE_VIDEO_DURATION', {
-      duration: vid.current.getDuration(),
-    });
+    if (vid.current !== null) {
+      messageHandler('UPDATE_VIDEO_DURATION', {
+        duration: vid.current.getDuration(),
+      });
+    }
     action('play');
     setLoaded(true);
     setPlaying(true);
@@ -90,7 +89,7 @@ export const renderer = ({ action, config, isPaused, messageHandler, story }) =>
 
   return (
     <div className="unselectable" style={styles.container}>
-      <CustomHeader story={story} config={config} data={data} action={action} />
+      <CustomHeader story={story} config={config} action={action} />
       <div className="unselectable" style={styles.videoContainer}>
         <ReactPlayer
           className="unselectable"
@@ -124,7 +123,7 @@ export const renderer = ({ action, config, isPaused, messageHandler, story }) =>
   );
 };
 
-export const tester = (story) => {
+export const tester = (story: Story) => {
   return {
     condition: story.type === 'video',
     priority: 2,

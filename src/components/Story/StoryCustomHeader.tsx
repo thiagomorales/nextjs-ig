@@ -1,9 +1,15 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
-import { WithHeader, WithSeeMore } from 'react-insta-stories';
+import { WithHeader } from 'react-insta-stories';
+import { Action, Story } from 'react-insta-stories/dist/interfaces';
 
-import ModalStateHook from '../hooks/story_modal_hook';
-import { getRandomInt } from '../utils';
+import { NumberOrString } from '@components/Story/interfaces';
+import { DEFAULT_IMAGE_URL } from '@config/constants';
+import { useStoryProvider } from '@providers/StoryProvider';
+
+import { getRandomInt } from '../../utils';
 
 const styles = {
   main: {
@@ -38,18 +44,31 @@ const styles = {
     color: 'rgba(255, 255, 255, 0.8)',
     margin: 0,
   },
-};
+} as const;
 
-export const CustomHeader = ({ action, config, data, story }) => {
-  const { setModal } = ModalStateHook();
+interface CustomHeaderProps {
+  action: Action;
+  story: Story;
+  config: {
+    width?: NumberOrString;
+    height?: NumberOrString;
+    loader?: JSX.Element;
+    header?: Function;
+    storyStyles?: Object;
+  };
+}
+
+export const CustomHeader = ({ action, config, story }: CustomHeaderProps) => {
+  const { activeUser, closeStory } = useStoryProvider();
 
   return (
+    // @ts-ignore
     <WithHeader story={story} globalHeader={config.header}>
       <div className="unselectable" style={styles.main}>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <img style={styles.img} src={data?.image} />
+          <img alt="logo" style={styles.img} src={activeUser?.imageUrl || DEFAULT_IMAGE_URL} />
           <span style={styles.text}>
-            <p style={styles.heading}>{data?.username}</p>
+            <p style={styles.heading}>{activeUser?.name}</p>
             <p style={styles.subheading}>{`Postado há ${getRandomInt(1, 59)}min`}</p>
           </span>
         </div>
@@ -65,8 +84,8 @@ export const CustomHeader = ({ action, config, data, story }) => {
           strokeLinejoin="round"
           className="feather feather-x"
           onClick={() => {
-            setModal(false);
             action('pause');
+            closeStory();
           }}
           style={{ zIndex: 999999999, cursor: 'pointer' }}
         >

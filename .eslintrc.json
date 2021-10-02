@@ -30,6 +30,8 @@
     "react/display-name": "off",
     "react/jsx-uses-react": "warn",
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
     "react/jsx-filename-extension": [
       "error",
       {
@@ -47,7 +49,7 @@
             "position": "before"
           },
           {
-            "pattern": "@olist/**",
+            "pattern": "{@olist/**,@containers/**,@components/**,@config/**,@locales/**,@models/**,@mocks/**,@pages/**,@providers/**,@services/**,@stores/**,@styles/**,@test-mocks/**}",
             "group": "external",
             "position": "after"
           }
